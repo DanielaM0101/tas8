@@ -39,9 +39,10 @@ WHERE price BETWEEN valor_minimo AND valor_maximo;
 ## 4. Seleccionar clientes que viven en una ciudad específica y tienen un tipo de cliente específico:
  - Sentencia:
   ```
-SELECT COUNT(*) 
-FROM product 
-WHERE price BETWEEN valor_minimo AND valor_maximo;
+SELECT * 
+FROM client
+WHERE city 'Valencia'
+ AND type_of_client = 'Cliente VIP';
   ```
 - Captura: 
 
@@ -50,9 +51,10 @@ WHERE price BETWEEN valor_minimo AND valor_maximo;
 ## 5. Seleccionar productos que pertenecen a una categoría específica y cuyo precio está por encima de un valor específico:
  - Sentencia:
   ```
-SELECT COUNT(*) 
+SELECT *
 FROM product 
-WHERE price BETWEEN valor_minimo AND valor_maximo;
+WHERE category = 'Calzado';
+AND price > 10;
   ```
 - Captura: 
 
@@ -75,9 +77,8 @@ AND country_of_origin = 'Corea del Sur';
  - Sentencia:
   ```
 SELECT * 
-FROM product 
-WHERE year_of_production = 2019 
-AND country_of_origin = 'Corea del Sur';
+FROM Client
+WHERE fullname LIKE 'J%';
   ```
 - Captura: 
 
